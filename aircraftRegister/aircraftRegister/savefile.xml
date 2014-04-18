@@ -1,0 +1,16 @@
+<vessels>
+	<vessel type=8>
+		<signature type=10>
+			<name>3</name>
+			<maxSpeed>5</maxSpeed>
+			<length>3</Length>
+			<maxRange>4</maxRange>
+			<maxDisp>6</maxDisp>
+			<crew>7</crew>
+			<MaxDive>9</MaxDive>
+			<maxSubmerge>10</maxSubmerge>
+			<DispSubmerge>11</DispSubmerge>
+			<NoSLBM>12</NoSLBM>
+		</signature>
+	</vessel>
+</vessels>
