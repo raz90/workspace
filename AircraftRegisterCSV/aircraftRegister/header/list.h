@@ -37,7 +37,7 @@ public:
 	private:
 	//data members
 	
-	LnNode<anyType> *_begin;		//pointer to first element in list
+	LnNode<anyType> *_begin;	//pointer to first element in list
 	LnNode<anyType> *_end;		//pointer to last element in list
 	LnNode<anyType> *_current;	//pointer to current element in list
 };

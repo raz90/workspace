@@ -29,7 +29,6 @@ public:
 		unsigned int pMaxSpeed, 
 		unsigned int pMaxDisp, 
 		unsigned int pCrew,
-		unsigned int pVessType,
 		unsigned int pMaxDive,
 		unsigned int pMaxSpeedSubmerge,
 		unsigned int pDispSubmerge,
@@ -42,7 +41,6 @@ public:
 		unsigned int pMaxSpeed, 
 		unsigned int pMaxDisp, 
 		unsigned int pCrew,
-		unsigned int pVessType,
 		unsigned int pMaxDive,
 		unsigned int pMaxSpeedSubmerge,
 		unsigned int pDispSubmerge,
@@ -55,7 +53,6 @@ public:
 		unsigned int pMaxSpeed, 
 		unsigned int pMaxDisp, 
 		unsigned int pCrew,
-		unsigned int pType,
 		unsigned int pNoOfHelicopter,
 		unsigned int pDeckSpace,
 		unsigned int pStorageCapacity);
@@ -67,7 +64,6 @@ public:
 								unsigned int pMaxSpeed, 
 								unsigned int pMaxDisp, 
 								unsigned int pCrew,
-								unsigned int pType,
 								unsigned int pNoOfHelicopter,
 								unsigned int pDeckSpace,
 								unsigned int pStorageCapacity,
@@ -80,7 +76,6 @@ public:
 								unsigned int pMaxSpeed, 
 								unsigned int pMaxDisp, 
 								unsigned int pCrew,
-								unsigned int pType,
 								unsigned int pNoOfHelicopter,
 								unsigned int pPrimaryWeapon);
 
@@ -91,7 +86,6 @@ public:
 						unsigned int pMaxSpeed, 
 						unsigned int pMaxDisp, 
 						unsigned int pCrew,
-						unsigned int pType,
 						unsigned int pNoOfHelicopter,
 						unsigned int pNoOfAircraft);
 	
@@ -109,20 +103,23 @@ public:
 
 	int getCount();
 
-	void saveSSB(std::string sentence);
+	void loadSSB(std::string sentence);
 
-	void saveSSK(std::string sentence);
+	void loadSSK(std::string sentence);
 
-	void saveTanker(std::string sentence);
+	void loadTanker(std::string sentence);
 
-	void saveLanding(std::string sentence);
+	void loadLanding(std::string sentence);
 
-	void saveAirCarrier(std::string sentence);
+	void loadAirCarrier(std::string sentence);
 
-	void saveDestroyer(std::string sentence);
+	void loadDestroyer(std::string sentence);
+
+	void observe();
 
 	//void bubbleSort();
 
+	float compare(float randVessel,float vessel);
 	
 
 

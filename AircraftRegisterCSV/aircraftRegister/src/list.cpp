@@ -77,10 +77,16 @@ void LnNode<anyType>::setPrevNode(LnNode *ptr)
 
 template <class  anyType>
 LnNode<anyType>* LnNode<anyType>::getPrevNode(void)
+
+	
 {
 	//return pointer to previous node
 	return _prev;
-} 
+}
+	
+
+
+
 
 template <class  anyType>
 void LnNode<anyType>::setData(anyType *ptr)
@@ -150,6 +156,8 @@ anyType* LnLinkedList<anyType>::getCurrent(void)
 
 template <class  anyType>
 void LnLinkedList<anyType>::deleteCurrent(void)
+
+try
 {
 	LnNode<anyType> *nodeToDelete =_current;
 	// If node to be deleted is head node
@@ -180,13 +188,18 @@ void LnLinkedList<anyType>::deleteCurrent(void)
 
 		delete nodeToDelete;
 		nodeToDelete = NULL;
+		std::cout<<"delete Succesfull"<<std::endl;
 	}
 	else
 	{
-		//throw exception(NOT_IN_LIST);
+		throw 20;
 	}
 } 
+catch(int err)
+{
+	std::cout<<"error code "<<err<<" Not in list"<<std::endl;
 
+}
 
 
 template <class  anyType>
