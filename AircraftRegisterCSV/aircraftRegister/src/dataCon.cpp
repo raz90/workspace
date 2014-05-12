@@ -401,31 +401,73 @@ catch (int err)
 
 
 template <class anyType>
-void DataCon<anyType>::findVessel(std::string pID)
+void DataCon<anyType>::findVessel()
 try
 {
 	if (getCount()>0)// check if vessel data available
 	{
-			anyType *data;
-			_dataList.find(pID);
-			data=_dataList.getCurrent();
+		string name;
+		int signature;
+		int choose;
+		do
+		{
+			cout<<"please choose to search by "<<endl;
+			cout<<"1.Name"<<endl;
+			cout<<"2.Signature"<<endl;
+			cout<<"0.Exit"<<endl;
+			cin>>choose;
+
+				if (cin.good())
+				{
+					if (choose==1)
+					{
+						cout<<"please enter name to search "<<endl;
+						cin>>name;
+						anyType *data;
+						_dataList.find(name);
+						data=_dataList.getCurrent();
 			
-			if (data!=NULL)
-			{
-			data->display();
-			}
-			else
-			{
-			std::cout<<"data not found"<<std::endl;
-			}
+						if (data!=NULL)
+						{
+						data->display();
+						}
+						else
+						{
+						std::cout<<"data not found"<<std::endl;
+						}
+					}
+					else if(choose==2)
+					{
+						
+						cout<<"please enter Signature to search "<<endl;
+						cin>>signature;
+						anyType *data;
+						_dataList.findSignature(signature);
+						data=_dataList.getCurrent();
+			
+						if (data!=NULL)
+						{
+						data->display();
+						}
+						else
+						{
+						std::cout<<"data not found"<<std::endl;
+						}
+						
+					}
+				}
+		   }while (choose!=0);
+			
 	}
 	else
 	{
 	throw 3;
 	}
-	
 
 }
+
+
+
 
 catch (int err)
 {
@@ -576,69 +618,6 @@ try
 
 
 
-/*
-template <class anyType> 
-void DataCon<anyType>::bubbleSort()
-{
-      
-if (getCount()>0)
-{
-	LnNode<anyType> *current = NULL;
-	LnNode<anyType> *Next = NULL;
-	current =_dataList.getBegin();	// Set current to head of list
-	anyType *firstData;
-	anyType *secondData;
-	bool swapped = true;
-	int j = 0;
-	anyType *tmp;
-
-
-
-
-      while (swapped) 
-	  {
-            swapped = false;
-            j++;
-            for (int i = 0; i < getCount() - j; i++) 
-			{
-
-				   
-				
-					firstData = current->getData();
-					Next = current->getNextNode();
-					if (Next!=NULL)
-					{
-					secondData = Next->getData();
-
-				
-						if (firstData->getSignature() > secondData->getSignature()) 
-						{
-							tmp = firstData;
-							firstData =secondData;
-							secondData = tmp;
-						
-							swapped = true;
-							std::cout<<"swapped"<<std::endl;
-						}
-						current = current->getNextNode();
-					}
-					else
-					{
-					std::cout<<"sorted"<<std::endl;
-					}
-				}
-					
-				
-			
-	  
-	   }
-}
-else
-	{
-	std::cout<<"no data inside"<<std::endl;
-	}
-}
-*/
 template <class anyType> 
 void DataCon<anyType>::loadSSB(std::string line)
 {
@@ -958,6 +937,8 @@ try
 
   /* generate  number between 1 and 9999: */
   randVess = rand() % 9999 + 1;
+
+  randVess=100;
   
   std::cout<<"random vessel signature"<<randVess<<std::endl;
 

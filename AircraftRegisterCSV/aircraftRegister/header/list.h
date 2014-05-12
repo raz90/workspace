@@ -32,6 +32,7 @@ public:
 	//find an element in list and set current pointer
 	void find(std::string ID);
 	
+	void findSignature(int ID);
 	
 
 	private:

@@ -239,3 +239,29 @@ while(node != NULL )
 //throw std::exception(NOT_IN_LIST);
 
 }
+
+template <class  anyType>
+void LnLinkedList<anyType>::findSignature(int pSignature)
+{
+
+anyType *ship;
+LnNode<anyType> *node;
+
+node=_begin;
+
+while(node != NULL )
+	{
+		ship= node->getData();
+		if(ship->getSignature()== pSignature)
+		{
+			_current=node;
+			return;
+		}
+		node = node->getNextNode();
+	}
+	
+	_current = NULL;
+	
+//throw std::exception(NOT_IN_LIST);
+
+}

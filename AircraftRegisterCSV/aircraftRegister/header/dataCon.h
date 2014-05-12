@@ -97,7 +97,7 @@ public:
 	void deleteVessel(std::string pID);
 
 	//to find data 
-	void findVessel(std::string pID);
+	void findVessel();
 
 	void save();
 
