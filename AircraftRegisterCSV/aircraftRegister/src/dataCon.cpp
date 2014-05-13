@@ -938,7 +938,7 @@ try
   /* generate  number between 1 and 9999: */
   randVess = rand() % 9999 + 1;
 
-  randVess=100;
+ 
   
   std::cout<<"random vessel signature"<<randVess<<std::endl;
 
