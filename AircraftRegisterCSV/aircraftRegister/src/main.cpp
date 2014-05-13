@@ -82,27 +82,6 @@ int main(int argc, char **argv)
 
 	}while(choice!=0);
 
-
-	
-	
-	
-	//sub1.addSSK("apo",2,3,4,5,6,7,9,10,11,12);
-	//sub1.addTanker("tangki",2,3,4,5,7,8,0,12,13);
-	//sub1.addLanding("landing",2,3,4,5,6,5,9,10,11,12);
-	//sub1.addAirCarrier("carry",2,3,4,5,6,7,9,0);
-	//sub1.addDestroyer("destroy",2,3,4,5,6,7,9,10);
-	
-	//sub1.observe();
-	//sub1.showVessel();
-	//sub1.deleteVessel("katak");
-	//sub1.findVessel("katak");
-	//sub1.deleteVessel("katak");
-	//sub1.bubbleSort();
-	//sub1.showVessel();
-	//sub1.save();
-	//sub1.load("savefile.txt");
-	//sub1.load("savefile.txt");
-	//sub1.showVessel();
 	
 	return 0;
 } 
@@ -185,6 +164,7 @@ void addVessel(DataCon<Vessel>&vess)
 			std::cout<<"invalid input"<<endl;
 			cin.clear();
 			cin.ignore();
+			
 			}
 
 	}while(choose!=0);
@@ -218,11 +198,39 @@ void SSKMenu(DataCon<Vessel> &vess)
 	unsigned int pMaxSpeedSubmerge; 
 	unsigned int pDispSubmerge;
 	unsigned int pNoTorpedo;
-	cout<<"please enter the vessel Name : ";
-	cin>>pVesselName;
-	
-	
+
+
+	cin.clear();
+	cin.ignore();
+	cin.sync();
 	bool check=false;
+
+	do
+	{
+		cout<<"please enter the vessel Name : ";
+		getline(cin,pVesselName);
+		for(unsigned int j=0;j<pVesselName.size();j++)
+		{
+			if(pVesselName[j]==' ')
+			{
+			cout<<"it is has space please put underscore "<<endl;
+			check=false;
+			break;
+			}
+			else
+			{
+			check=true;
+			}
+			
+		}
+		
+	cin.clear();
+	cin.sync();	
+	}while(check!=true);
+	
+
+
+    check=false;
 	do
 	{
 		cout<<"please enter the vessel signature : ";
@@ -462,47 +470,257 @@ void SSBMenu(DataCon<Vessel> &vess)
 	unsigned int pMaxSpeedSubmerge; 
 	unsigned int pDispSubmerge;
 	unsigned int pSLBM;
-	cout<<"please enter the vessel Name : ";
-	cin>>pVesselName;
+
+	cin.clear();
+	cin.ignore();
+	cin.sync();
+	bool check=false;
+	do
+	{
+		cout<<"please enter the vessel Name : ";
+		getline(cin,pVesselName);
+		for(unsigned int j=0;j<pVesselName.size();j++)
+		{
+			if(pVesselName[j]==' ')
+			{
+			cout<<"it is has space please put underscore "<<endl;
+			check=false;
+			break;
+			}
+			else
+			{
+			check=true;
+			}
+			
+		}
+		
+	cin.clear();
+	cin.sync();	
+	}while(check!=true);
 	
 
-	cout<<"please enter the vessel signature : ";
-	cin>>pSignature;
+
+    check=false;
+	do
+	{
+		cout<<"please enter the vessel signature : ";
+		cin>>pSignature;
+		if(cin.good())
+		{
+			if(pSignature>0&&pSignature<10000)
+			{
+				check=true;
+			}
+			else
+			{
+			cout<<"out of range"<<endl;
+			}
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+
+
+	
+	
+    check=false;
+	do
+	{
+		cout<<"please enter the vessel Length : ";
+		cin>>pLength;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+
+	check=false;
+	do
+	{
+		cout<<"please enter the maximum range : ";
+		cin>>pMaxRange;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+		
+
+	check=false;
+	do
+	{
+		cout<<"please enter the maximum speed : ";
+		cin>>pMaxSpeed;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+		
+	check=false;
+	do
+	{
+		cout<<"please enter the maximum Displacement : ";
+		cin>>pMaxDisp;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+
+	check=false;
+	do
+	{
+		cout<<"please enter the crew number : ";
+		cin>>pCrew;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
 	
 
-	cout<<"please enter the vessel Length : ";
-	cin>>pLength;
 	
 
-	cout<<"please enter the maximum range : ";
-	cin>>pMaxRange;
-
-	cout<<"please enter the maximum speed : ";
-	cin>>pMaxSpeed;
+	check=false;
+	do
+	{
+		cout<<"please enter the Maximum dive speed : ";
+	    cin>>pMaxDive;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+	
 	
 
-	cout<<"please enter the maximum Displacement : ";
-	cin>>pMaxDisp;
 	
 
-	cout<<"please enter the crew number : ";
-	cin>>pCrew;
+	check=false;
+	do
+	{
+		cout<<"please enter the maximum speed submerge : ";
+	    cin>>pMaxSpeedSubmerge;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
 	
 
-	cout<<"please enter the Maximum dive speed : ";
-	cin>>pMaxDive;
 	
 
-	cout<<"please enter the maximum speed submerge : ";
-	cin>>pMaxSpeedSubmerge;
-	
+	check=false;
+	do
+	{
+		cout<<"please enter the Displacement submerge : ";
+	    cin>>pDispSubmerge;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
 
-	cout<<"please enter the Displacement submerge : ";
-	cin>>pDispSubmerge;
-	
 
-	cout<<"please enter the no of SLBM : ";
-	cin>>pSLBM;
+	check=false;
+	do
+	{
+		cout<<"please enter the no of SLBM : ";
+	    cin>>pSLBM;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
 	
 
 			vess.addSSB(pVesselName,
@@ -533,43 +751,256 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 	unsigned int pStorageCapacity;
 	unsigned int pNoOfAircraft;
 
-	cout<<"please enter the vessel Name : ";
-	cin>>pVesselName;
+	cin.clear();
+	cin.ignore();
+	cin.sync();
+	bool check=false;
+	do
+	{
+		cout<<"please enter the vessel Name : ";
+		getline(cin,pVesselName);
+		for(unsigned int j=0;j<pVesselName.size();j++)
+		{
+			if(pVesselName[j]==' ')
+			{
+			cout<<"it is has space please put underscore "<<endl;
+			check=false;
+			break;
+			}
+			else
+			{
+			check=true;
+			}
+			
+		}
+		
+	cin.clear();
+	cin.sync();	
+	}while(check!=true);
 	
 
-	cout<<"please enter the vessel signature : ";
-	cin>>pSignature;
-	
-	cout<<"please enter the vessel Length : ";
-	cin>>pLength;
-	
-	cout<<"please enter the maximum range : ";
-	cin>>pMaxRange;
 
-	cout<<"please enter the maximum speed : ";
-	cin>>pMaxSpeed;
+    check=false;
+	do
+	{
+		cout<<"please enter the vessel signature : ";
+		cin>>pSignature;
+		if(cin.good())
+		{
+			if(pSignature>0&&pSignature<10000)
+			{
+				check=true;
+			}
+			else
+			{
+			cout<<"out of range"<<endl;
+			}
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+
+
+	
+	
+    check=false;
+	do
+	{
+		cout<<"please enter the vessel Length : ";
+		cin>>pLength;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+
+	check=false;
+	do
+	{
+		cout<<"please enter the maximum range : ";
+		cin>>pMaxRange;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+		
+
+	check=false;
+	do
+	{
+		cout<<"please enter the maximum speed : ";
+		cin>>pMaxSpeed;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+		
+	check=false;
+	do
+	{
+		cout<<"please enter the maximum Displacement : ";
+		cin>>pMaxDisp;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+
+	check=false;
+	do
+	{
+		cout<<"please enter the crew number : ";
+		cin>>pCrew;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+	
 	
 
-	cout<<"please enter the maximum Displacement : ";
-	cin>>pMaxDisp;
+	check=false;
+	do
+	{
+		cout<<"please enter the No of Helicopter : ";
+	    cin>>pNoOfHelicopter;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
 	
 
-	cout<<"please enter the crew number : ";
-	cin>>pCrew;
-	
-	cout<<"please enter the No of Helicopter : ";
-	cin>>pNoOfHelicopter;
 	
 
-	cout<<"please enter the Deck Space : ";
-	cin>>pDeckSpace;
+	check=false;
+	do
+	{
+		cout<<"please enter the Deck Space : ";
+	    cin>>pDeckSpace;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
 	
 
-	cout<<"please enter the storage capacity : ";
-	cin>>pStorageCapacity;
 	
-	cout<<"please enter the no of Aircraft : ";
-	cin>>pNoOfAircraft;
+	check=false;
+	do
+	{
+		cout<<"please enter the storage capacity : ";
+		cin>>pStorageCapacity;
+
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+	
+	
+
+	check=false;
+	do
+	{
+		cout<<"please enter the no of Aircraft : ";
+	    cin>>pNoOfAircraft;
+
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
 
 
 
@@ -600,44 +1031,229 @@ void tankerMenu(DataCon<Vessel> &vess)
 	unsigned int pDeckSpace; 
 	unsigned int pStorageCapacity;
 
-
-	cout<<"please enter the vessel Name : ";
-	cin>>pVesselName;
+	cin.clear();
+	cin.ignore();
+	cin.sync();
+	bool check=false;
+	do
+	{
+		cout<<"please enter the vessel Name : ";
+		getline(cin,pVesselName);
+		for(unsigned int j=0;j<pVesselName.size();j++)
+		{
+			if(pVesselName[j]==' ')
+			{
+			cout<<"it is has space please put underscore "<<endl;
+			check=false;
+			break;
+			}
+			else
+			{
+			check=true;
+			}
+			
+		}
+		
+	cin.clear();
+	cin.sync();	
+	}while(check!=true);
 	
 
-	cout<<"please enter the vessel signature : ";
-	cin>>pSignature;
+
+    check=false;
+	do
+	{
+		cout<<"please enter the vessel signature : ";
+		cin>>pSignature;
+		if(cin.good())
+		{
+			if(pSignature>0&&pSignature<10000)
+			{
+				check=true;
+			}
+			else
+			{
+			cout<<"out of range"<<endl;
+			}
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+
+
+	
+	
+    check=false;
+	do
+	{
+		cout<<"please enter the vessel Length : ";
+		cin>>pLength;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+
+	check=false;
+	do
+	{
+		cout<<"please enter the maximum range : ";
+		cin>>pMaxRange;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+		
+
+	check=false;
+	do
+	{
+		cout<<"please enter the maximum speed : ";
+		cin>>pMaxSpeed;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+		
+	check=false;
+	do
+	{
+		cout<<"please enter the maximum Displacement : ";
+		cin>>pMaxDisp;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+
+	check=false;
+	do
+	{
+		cout<<"please enter the crew number : ";
+		cin>>pCrew;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
 	
 
-	cout<<"please enter the vessel Length : ";
-	cin>>pLength;
+	check=false;
+	do
+	{
+		cout<<"please enter the No of Helicopter : ";
+	    cin>>pNoOfHelicopter;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
 	
 
-	cout<<"please enter the maximum range : ";
-	cin>>pMaxRange;
-
-	cout<<"please enter the maximum speed : ";
-	cin>>pMaxSpeed;
+	
+	check=false;
+	do
+	{
+		cout<<"please enter the Deck Space : ";
+	    cin>>pDeckSpace;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
 	
 
-	cout<<"please enter the maximum Displacement : ";
-	cin>>pMaxDisp;
-	
-
-	cout<<"please enter the crew number : ";
-	cin>>pCrew;
-	
-
-	cout<<"please enter the No of Helicopter : ";
-	cin>>pNoOfHelicopter;
-	
-
-	cout<<"please enter the Deck Space : ";
-	cin>>pDeckSpace;
-	
-
-	cout<<"please enter the storage capacity : ";
-	cin>>pStorageCapacity;
+	check=false;
+	do
+	{
+		cout<<"please enter the storage capacity : ";
+	    cin>>pStorageCapacity;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
 	
 
 
@@ -668,39 +1284,210 @@ void aircraftCarMenu(DataCon<Vessel> &vess)
 	unsigned int pNoOfHelicopter; 
 	unsigned int pNoOfAircraft;
 
-
-	cout<<"please enter the vessel Name : ";
-	cin>>pVesselName;
+	cin.clear();
+	cin.ignore();
+	cin.sync();
+	bool check=false;
+	do
+	{
+		cout<<"please enter the vessel Name : ";
+		getline(cin,pVesselName);
+		for(unsigned int j=0;j<pVesselName.size();j++)
+		{
+			if(pVesselName[j]==' ')
+			{
+			cout<<"it is has space please put underscore "<<endl;
+			check=false;
+			break;
+			}
+			else
+			{
+			check=true;
+			}
+			
+		}
+		
+	cin.clear();
+	cin.sync();	
+	}while(check!=true);
 	
 
-	cout<<"please enter the vessel signature : ";
-	cin>>pSignature;
+
+    check=false;
+	do
+	{
+		cout<<"please enter the vessel signature : ";
+		cin>>pSignature;
+		if(cin.good())
+		{
+			if(pSignature>0&&pSignature<10000)
+			{
+				check=true;
+			}
+			else
+			{
+			cout<<"out of range"<<endl;
+			}
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+
+
+	
+	
+    check=false;
+	do
+	{
+		cout<<"please enter the vessel Length : ";
+		cin>>pLength;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+
+	check=false;
+	do
+	{
+		cout<<"please enter the maximum range : ";
+		cin>>pMaxRange;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+		
+
+	check=false;
+	do
+	{
+		cout<<"please enter the maximum speed : ";
+		cin>>pMaxSpeed;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+		
+	check=false;
+	do
+	{
+		cout<<"please enter the maximum Displacement : ";
+		cin>>pMaxDisp;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+
+	check=false;
+	do
+	{
+		cout<<"please enter the crew number : ";
+		cin>>pCrew;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+	
 	
 
-	cout<<"please enter the vessel Length : ";
-	cin>>pLength;
+	check=false;
+	do
+	{
+		cout<<"please enter the No of Helicopter : ";
+		cin>>pNoOfHelicopter;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
 	
+	
+	
+	check=false;
+	do
+	{
+		cout<<"please enter the no Aircraft : ";
+	    cin>>pNoOfAircraft;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
 
-	cout<<"please enter the maximum range : ";
-	cin>>pMaxRange;
-
-	cout<<"please enter the maximum speed : ";
-	cin>>pMaxSpeed;
-	
-
-	cout<<"please enter the maximum Displacement : ";
-	cin>>pMaxDisp;
-	
-
-	cout<<"please enter the crew number : ";
-	cin>>pCrew;
-	
-	cout<<"please enter the No of Helicopter : ";
-	cin>>pNoOfHelicopter;
-	
-	cout<<"please enter the no Aircraft : ";
-	cin>>pNoOfAircraft;
-	
 	vess.addAirCarrier(pVesselName,
 						 pSignature,
 						 pLength, 
@@ -725,40 +1512,212 @@ void destroyerMenu(DataCon<Vessel> &vess)
 	unsigned int pNoOfHelicopter; 
 	unsigned int pPrimaryWeapon;
 
-
-	cout<<"please enter the vessel Name : ";
-	cin>>pVesselName;
+	cin.clear();
+	cin.ignore();
+	cin.sync();
+	bool check=false;
+	do
+	{
+		cout<<"please enter the vessel Name : ";
+		getline(cin,pVesselName);
+		for(unsigned int j=0;j<pVesselName.size();j++)
+		{
+			if(pVesselName[j]==' ')
+			{
+			cout<<"it is has space please put underscore "<<endl;
+			check=false;
+			break;
+			}
+			else
+			{
+			check=true;
+			}
+			
+		}
+		
+	cin.clear();
+	cin.sync();	
+	}while(check!=true);
 	
 
-	cout<<"please enter the vessel signature : ";
-	cin>>pSignature;
+
+    check=false;
+	do
+	{
+		cout<<"please enter the vessel signature : ";
+		cin>>pSignature;
+		if(cin.good())
+		{
+			if(pSignature>0&&pSignature<10000)
+			{
+				check=true;
+			}
+			else
+			{
+			cout<<"out of range"<<endl;
+			}
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+
+
+	
+	
+    check=false;
+	do
+	{
+		cout<<"please enter the vessel Length : ";
+		cin>>pLength;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+
+	check=false;
+	do
+	{
+		cout<<"please enter the maximum range : ";
+		cin>>pMaxRange;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+		
+
+	check=false;
+	do
+	{
+		cout<<"please enter the maximum speed : ";
+		cin>>pMaxSpeed;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+		
+	check=false;
+	do
+	{
+		cout<<"please enter the maximum Displacement : ";
+		cin>>pMaxDisp;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+
+	check=false;
+	do
+	{
+		cout<<"please enter the crew number : ";
+		cin>>pCrew;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+	
 	
 
-	cout<<"please enter the vessel Length : ";
-	cin>>pLength;
+	check=false;
+	do
+	{
+		cout<<"please enter the No of Helicopter : ";
+	    cin>>pNoOfHelicopter;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+	
 	
 
-	cout<<"please enter the maximum range : ";
-	cin>>pMaxRange;
+	check=false;
+	do
+	{
+		cout<<"please enter the Primary Weapon : ";
+		cout<<"1.Gun Type"<<endl;
+		cout<<"2.Guided missile  Type"<<endl;
+		cin>>pPrimaryWeapon;
+		if(cin.good())
+		{
+		check=true;
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
 
-	cout<<"please enter the maximum speed : ";
-	cin>>pMaxSpeed;
-	
-
-	cout<<"please enter the maximum Displacement : ";
-	cin>>pMaxDisp;
-	
-
-	cout<<"please enter the crew number : ";
-	cin>>pCrew;
-	
-	cout<<"please enter the No of Helicopter : ";
-	cin>>pNoOfHelicopter;
-	
-	cout<<"please enter the Primary Weapon : ";
-	cout<<"1.Gun Type"<<endl;
-	cout<<"2.Guided missile  Type"<<endl;
-	cin>>pPrimaryWeapon;
 	
 	vess.addDestroyer(pVesselName,
 						 pSignature,

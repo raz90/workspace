@@ -325,7 +325,7 @@ try
 					browseCount++;
 							if (browseCount<=getCount())
 							{
-							std::cout<<browseCount<<std::endl;
+							std::cout<<"Page : "<<browseCount<<std::endl;
 							current = current->getNextNode();//Get next node
 							data = current->getData();
 							data->display();//display data
