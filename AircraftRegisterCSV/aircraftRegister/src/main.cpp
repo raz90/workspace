@@ -13,6 +13,7 @@ using namespace std;
 
 void menu();
 void addVessel(DataCon<Vessel>&vess);
+void deleteVessel(DataCon<Vessel>&vess);
 void browseVessel(DataCon<Vessel>&vess);
 void searchVessel(DataCon<Vessel>&vess);
 void SSKMenu(DataCon<Vessel>&vess);
@@ -21,6 +22,7 @@ void landingPlatMenu(DataCon<Vessel>&vess);
 void tankerMenu(DataCon<Vessel>&vess);
 void aircraftCarMenu(DataCon<Vessel>&vess);
 void destroyerMenu(DataCon<Vessel>&vess);
+
 
 int main(int argc, char **argv)
 {	
@@ -50,7 +52,7 @@ int main(int argc, char **argv)
 				}
 				else if (choice==2)
 				{
-					vess.deleteVessel("katak");
+					deleteVessel(vess);
 				}
 				else if (choice==3)
 				{
@@ -173,6 +175,39 @@ void addVessel(DataCon<Vessel>&vess)
 
 }
 
+void deleteVessel(DataCon<Vessel> & vess)
+{	
+	bool check=false;
+	int pSignature;
+	do
+	{
+		cout<<"please enter the vessel signature : ";
+		cin>>pSignature;
+		if(cin.good())//to check if the input is interget or not
+		{
+			if(pSignature>0&&pSignature<10000)// to check if the signature is within range
+			{
+				vess.deleteVessel(pSignature);
+				check=true;
+			}
+			else
+			{
+			cout<<"out of range"<<endl;
+			}
+		}
+		else
+		{
+		cout<<"is not digit"<<endl;
+		
+		}
+		cin.clear();
+		cin.ignore();
+		cin.sync();
+		
+	}while(check!=true);
+
+}
+
 void browseVessel(DataCon<Vessel> &vess)
 {
 	vess.showVessel();
@@ -184,6 +219,8 @@ void searchVessel(DataCon<Vessel> &vess)
 	vess.findVessel();
 
 }
+
+
 
 void SSKMenu(DataCon<Vessel> &vess)
 {
@@ -209,11 +246,11 @@ void SSKMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the vessel Name : ";
 		getline(cin,pVesselName);
-		for(unsigned int j=0;j<pVesselName.size();j++)
+		for(unsigned int j=0;j<pVesselName.size();j++) //to check if the any space in the between input
 		{
 			if(pVesselName[j]==' ')
 			{
-			cout<<"it is has space please put underscore "<<endl;
+			cout<<"it has space please put underscore "<<endl;
 			check=false;
 			break;
 			}
@@ -235,11 +272,14 @@ void SSKMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the vessel signature : ";
 		cin>>pSignature;
-		if(cin.good())
+		if(cin.good())//to check if the input is interget or not
 		{
-			if(pSignature>0&&pSignature<10000)
+			if(pSignature>0&&pSignature<10000)// to check if the signature is within range
 			{
-				check=true;
+				if (vess.checkSignature(pSignature)==true)
+				{
+					check=true;
+				}
 			}
 			else
 			{
@@ -483,7 +523,7 @@ void SSBMenu(DataCon<Vessel> &vess)
 		{
 			if(pVesselName[j]==' ')
 			{
-			cout<<"it is has space please put underscore "<<endl;
+			cout<<"it has space please put underscore "<<endl;
 			check=false;
 			break;
 			}
@@ -509,7 +549,10 @@ void SSBMenu(DataCon<Vessel> &vess)
 		{
 			if(pSignature>0&&pSignature<10000)
 			{
-				check=true;
+				if (vess.checkSignature(pSignature)==true)
+				{
+					check=true;
+				}
 			}
 			else
 			{
@@ -763,7 +806,7 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 		{
 			if(pVesselName[j]==' ')
 			{
-			cout<<"it is has space please put underscore "<<endl;
+			cout<<"it has space please put underscore "<<endl;
 			check=false;
 			break;
 			}
@@ -789,7 +832,10 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 		{
 			if(pSignature>0&&pSignature<10000)
 			{
-				check=true;
+				if (vess.checkSignature(pSignature)==true)
+				{
+					check=true;
+				}
 			}
 			else
 			{
@@ -1043,7 +1089,7 @@ void tankerMenu(DataCon<Vessel> &vess)
 		{
 			if(pVesselName[j]==' ')
 			{
-			cout<<"it is has space please put underscore "<<endl;
+			cout<<"it has space please put underscore "<<endl;
 			check=false;
 			break;
 			}
@@ -1069,7 +1115,10 @@ void tankerMenu(DataCon<Vessel> &vess)
 		{
 			if(pSignature>0&&pSignature<10000)
 			{
-				check=true;
+				if (vess.checkSignature(pSignature)==true)
+				{
+					check=true;
+				}
 			}
 			else
 			{
@@ -1296,7 +1345,7 @@ void aircraftCarMenu(DataCon<Vessel> &vess)
 		{
 			if(pVesselName[j]==' ')
 			{
-			cout<<"it is has space please put underscore "<<endl;
+			cout<<"it has space please put underscore "<<endl;
 			check=false;
 			break;
 			}
@@ -1322,7 +1371,10 @@ void aircraftCarMenu(DataCon<Vessel> &vess)
 		{
 			if(pSignature>0&&pSignature<10000)
 			{
-				check=true;
+				if (vess.checkSignature(pSignature)==true)
+				{
+					check=true;
+				}
 			}
 			else
 			{
@@ -1524,7 +1576,7 @@ void destroyerMenu(DataCon<Vessel> &vess)
 		{
 			if(pVesselName[j]==' ')
 			{
-			cout<<"it is has space please put underscore "<<endl;
+			cout<<"it has space please put underscore "<<endl;
 			check=false;
 			break;
 			}
@@ -1550,7 +1602,10 @@ void destroyerMenu(DataCon<Vessel> &vess)
 		{
 			if(pSignature>0&&pSignature<10000)
 			{
-				check=true;
+				if (vess.checkSignature(pSignature)==true)
+				{
+					check=true;
+				}
 			}
 			else
 			{

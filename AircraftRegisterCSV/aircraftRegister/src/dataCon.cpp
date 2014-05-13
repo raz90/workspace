@@ -377,12 +377,12 @@ catch (int err)
 }
 
 template<class anyType>
-void DataCon<anyType>::deleteVessel(std::string pID)
+void DataCon<anyType>::deleteVessel(int pSignature)
 try
 {
 	if (getCount()>0&&getCount()<maxVessel)// check if vessel data available
 	{
-		_dataList.find(pID);
+		_dataList.findSignature(pSignature);
 		_dataList.deleteCurrent();
 		
 		_count--;
@@ -996,3 +996,29 @@ float DataCon<anyType>::compare(float pRandVes,float pVessel)
 	return std::abs(result);// return modulus result
 
 }
+
+
+template <class anyType> 
+bool DataCon<anyType>::checkSignature( int pSignature)
+{
+	
+	anyType *data;
+	_dataList.findSignature(pSignature);
+	data=_dataList.getCurrent();
+			
+	if (data!=NULL)
+	{
+	cout<<"this signature already existed please put another signature"<<endl;
+	return false;
+	}
+	else
+	{
+	std::cout<<"this signature is fine"<<std::endl;
+	return true;
+	}
+						
+					
+
+}
+
+

@@ -94,10 +94,12 @@ public:
 	void showVessel();
 
 	//to delete data using id
-	void deleteVessel(std::string pID);
+	void deleteVessel(int pSignature);
 
 	//to find data 
 	void findVessel();
+
+	
 
 	void save();
 
@@ -117,9 +119,9 @@ public:
 
 	void observe();
 
-	//void bubbleSort();
-
 	float compare(float randVessel,float vessel);
+
+	bool checkSignature(int pSignature);
 	
 
 
