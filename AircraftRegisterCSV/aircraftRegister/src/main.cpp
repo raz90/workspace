@@ -270,7 +270,7 @@ void SSKMenu(DataCon<Vessel> &vess)
     check=false;
 	do
 	{
-		cout<<"please enter the vessel signature : ";
+		cout<<"please enter the vessel signature (Digits only): ";
 		cin>>pSignature;
 		if(cin.good())//to check if the input is interget or not
 		{
@@ -303,7 +303,7 @@ void SSKMenu(DataCon<Vessel> &vess)
     check=false;
 	do
 	{
-		cout<<"please enter the vessel Length : ";
+		cout<<"please enter the vessel Length (In Metres) : ";
 		cin>>pLength;
 		if(cin.good())
 		{
@@ -323,7 +323,7 @@ void SSKMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum range : ";
+		cout<<"please enter the maximum range (In Nautical Miles) : ";
 		cin>>pMaxRange;
 		if(cin.good())
 		{
@@ -344,7 +344,7 @@ void SSKMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum speed : ";
+		cout<<"please enter the maximum speed (in Knots) : ";
 		cin>>pMaxSpeed;
 		if(cin.good())
 		{
@@ -364,7 +364,7 @@ void SSKMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum Displacement : ";
+		cout<<"please enter the maximum Displacement (in tones): ";
 		cin>>pMaxDisp;
 		if(cin.good())
 		{
@@ -404,7 +404,7 @@ void SSKMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the Maximum dive speed : ";
+		cout<<"please enter the Maximum dive depth (in meters ): ";
 		cin>>pMaxDive;
 		if(cin.good())
 		{
@@ -424,7 +424,7 @@ void SSKMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum speed submerge : ";
+		cout<<"please enter the maximum speed submerge (in Knots): ";
 		cin>>pMaxSpeedSubmerge;
 		if(cin.good())
 		{
@@ -444,7 +444,7 @@ void SSKMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the Displacement submerge : ";
+		cout<<"please enter the Displacement submerge (In tons): ";
 		cin>>pDispSubmerge;
 		if(cin.good())
 		{
@@ -543,7 +543,7 @@ void SSBMenu(DataCon<Vessel> &vess)
     check=false;
 	do
 	{
-		cout<<"please enter the vessel signature : ";
+		cout<<"please enter the vessel signature (Digits only): ";
 		cin>>pSignature;
 		if(cin.good())
 		{
@@ -576,7 +576,7 @@ void SSBMenu(DataCon<Vessel> &vess)
     check=false;
 	do
 	{
-		cout<<"please enter the vessel Length : ";
+		cout<<"please enter the vessel Length (In Metres): ";
 		cin>>pLength;
 		if(cin.good())
 		{
@@ -596,7 +596,7 @@ void SSBMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum range : ";
+		cout<<"please enter the maximum range (In Nautical Miles): ";
 		cin>>pMaxRange;
 		if(cin.good())
 		{
@@ -617,7 +617,7 @@ void SSBMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum speed : ";
+		cout<<"please enter the maximum speed (In Knots): ";
 		cin>>pMaxSpeed;
 		if(cin.good())
 		{
@@ -637,7 +637,7 @@ void SSBMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum Displacement : ";
+		cout<<"please enter the maximum Displacement (in tons): ";
 		cin>>pMaxDisp;
 		if(cin.good())
 		{
@@ -680,7 +680,7 @@ void SSBMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the Maximum dive speed : ";
+		cout<<"please enter the Maximum dive depth (In Metres): ";
 	    cin>>pMaxDive;
 		if(cin.good())
 		{
@@ -704,7 +704,7 @@ void SSBMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum speed submerge : ";
+		cout<<"please enter the maximum speed submerge (in knots): ";
 	    cin>>pMaxSpeedSubmerge;
 		if(cin.good())
 		{
@@ -727,7 +727,7 @@ void SSBMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the Displacement submerge : ";
+		cout<<"please enter the Displacement submerge (in tons): ";
 	    cin>>pDispSubmerge;
 		if(cin.good())
 		{
@@ -826,7 +826,7 @@ void landingPlatMenu(DataCon<Vessel> &vess)
     check=false;
 	do
 	{
-		cout<<"please enter the vessel signature : ";
+		cout<<"please enter the vessel signature (Digits only): ";
 		cin>>pSignature;
 		if(cin.good())
 		{
@@ -859,7 +859,7 @@ void landingPlatMenu(DataCon<Vessel> &vess)
     check=false;
 	do
 	{
-		cout<<"please enter the vessel Length : ";
+		cout<<"please enter the vessel Length (In Meters): ";
 		cin>>pLength;
 		if(cin.good())
 		{
@@ -879,7 +879,7 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum range : ";
+		cout<<"please enter the maximum range (in nautical miles): ";
 		cin>>pMaxRange;
 		if(cin.good())
 		{
@@ -900,7 +900,7 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum speed : ";
+		cout<<"please enter the maximum speed (in knots): ";
 		cin>>pMaxSpeed;
 		if(cin.good())
 		{
@@ -920,7 +920,7 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum Displacement : ";
+		cout<<"please enter the maximum Displacement (in tons): ";
 		cin>>pMaxDisp;
 		if(cin.good())
 		{
@@ -985,7 +985,7 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the Deck Space : ";
+		cout<<"please enter the Deck Space (In Square Meters): ";
 	    cin>>pDeckSpace;
 		if(cin.good())
 		{
@@ -1007,7 +1007,7 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the storage capacity : ";
+		cout<<"please enter the storage capacity (in Cubic Metres): ";
 		cin>>pStorageCapacity;
 
 		if(cin.good())
@@ -1109,7 +1109,7 @@ void tankerMenu(DataCon<Vessel> &vess)
     check=false;
 	do
 	{
-		cout<<"please enter the vessel signature : ";
+		cout<<"please enter the vessel signature (Digits only): ";
 		cin>>pSignature;
 		if(cin.good())
 		{
@@ -1142,7 +1142,7 @@ void tankerMenu(DataCon<Vessel> &vess)
     check=false;
 	do
 	{
-		cout<<"please enter the vessel Length : ";
+		cout<<"please enter the vessel Length (in meters): ";
 		cin>>pLength;
 		if(cin.good())
 		{
@@ -1162,7 +1162,7 @@ void tankerMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum range : ";
+		cout<<"please enter the maximum range (in nautical miles): ";
 		cin>>pMaxRange;
 		if(cin.good())
 		{
@@ -1183,7 +1183,7 @@ void tankerMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum speed : ";
+		cout<<"please enter the maximum speed (in knots): ";
 		cin>>pMaxSpeed;
 		if(cin.good())
 		{
@@ -1203,7 +1203,7 @@ void tankerMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum Displacement : ";
+		cout<<"please enter the maximum Displacement (in tons): ";
 		cin>>pMaxDisp;
 		if(cin.good())
 		{
@@ -1266,7 +1266,7 @@ void tankerMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the Deck Space : ";
+		cout<<"please enter the Deck Space (in square meters): ";
 	    cin>>pDeckSpace;
 		if(cin.good())
 		{
@@ -1287,7 +1287,7 @@ void tankerMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the storage capacity : ";
+		cout<<"please enter the storage capacity (in Cubic Metres): ";
 	    cin>>pStorageCapacity;
 		if(cin.good())
 		{
@@ -1365,7 +1365,7 @@ void aircraftCarMenu(DataCon<Vessel> &vess)
     check=false;
 	do
 	{
-		cout<<"please enter the vessel signature : ";
+		cout<<"please enter the vessel signature (Digits only): ";
 		cin>>pSignature;
 		if(cin.good())
 		{
@@ -1398,7 +1398,7 @@ void aircraftCarMenu(DataCon<Vessel> &vess)
     check=false;
 	do
 	{
-		cout<<"please enter the vessel Length : ";
+		cout<<"please enter the vessel Length (in meters): ";
 		cin>>pLength;
 		if(cin.good())
 		{
@@ -1418,7 +1418,7 @@ void aircraftCarMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum range : ";
+		cout<<"please enter the maximum range (in nautical miles): ";
 		cin>>pMaxRange;
 		if(cin.good())
 		{
@@ -1439,7 +1439,7 @@ void aircraftCarMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum speed : ";
+		cout<<"please enter the maximum speed (in knots): ";
 		cin>>pMaxSpeed;
 		if(cin.good())
 		{
@@ -1459,7 +1459,7 @@ void aircraftCarMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum Displacement : ";
+		cout<<"please enter the maximum Displacement (in tons): ";
 		cin>>pMaxDisp;
 		if(cin.good())
 		{
@@ -1596,7 +1596,7 @@ void destroyerMenu(DataCon<Vessel> &vess)
     check=false;
 	do
 	{
-		cout<<"please enter the vessel signature : ";
+		cout<<"please enter the vessel signature (Digits only): ";
 		cin>>pSignature;
 		if(cin.good())
 		{
@@ -1629,7 +1629,7 @@ void destroyerMenu(DataCon<Vessel> &vess)
     check=false;
 	do
 	{
-		cout<<"please enter the vessel Length : ";
+		cout<<"please enter the vessel Length (in meters): ";
 		cin>>pLength;
 		if(cin.good())
 		{
@@ -1649,7 +1649,7 @@ void destroyerMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum range : ";
+		cout<<"please enter the maximum range (in nautical miles): ";
 		cin>>pMaxRange;
 		if(cin.good())
 		{
@@ -1670,7 +1670,7 @@ void destroyerMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum speed : ";
+		cout<<"please enter the maximum speed (in tons): ";
 		cin>>pMaxSpeed;
 		if(cin.good())
 		{
@@ -1690,7 +1690,7 @@ void destroyerMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the maximum Displacement : ";
+		cout<<"please enter the maximum Displacement (in tons): ";
 		cin>>pMaxDisp;
 		if(cin.good())
 		{

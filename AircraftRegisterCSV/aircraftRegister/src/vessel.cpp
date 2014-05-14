@@ -102,10 +102,10 @@ using namespace std;
 	{
 	cout<<"vessel name : "<<_name<<endl;
 	cout<<"signature id : "<<_signature<<endl;
-	cout<<"length : "<<_length<<endl;
-	cout<<"maximum speed : "<<_maxSpeed<<endl;
-	cout<<"maximum Range : "<<_maxRange<<endl;
-	cout<<"Displacement : "<<_maxDisp<<endl;
+	cout<<"length : "<<_length<<"meters"<<endl;
+	cout<<"maximum speed : "<<_maxSpeed<<"Knots"<<endl;
+	cout<<"maximum Range : "<<_maxRange<<"nautical miles"<<endl;
+	cout<<"Displacement : "<<_maxDisp<<"tons"<<endl;
 	cout<<"crew : "<<_crew<<endl;
 	cout<<"Vessel Type :"<<_vesselType<<endl;
 

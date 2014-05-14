@@ -69,7 +69,7 @@ unsigned int LandingPlatformDock::getNoOfAircraft()
 void LandingPlatformDock::display()
 {
 	FleetAuxillary::display();
-	cout << "Number of Aircraft" << LandingPlatformDock::getNoOfAircraft() <<endl;
+	cout << "Number of Aircraft :" << LandingPlatformDock::getNoOfAircraft() <<endl;
 
 }
 

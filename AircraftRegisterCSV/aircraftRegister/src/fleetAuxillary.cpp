@@ -100,10 +100,10 @@ void FleetAuxillary::display()
 {
 	SurfaceVessel::display();
 
-	cout<<" Deck Space :"<< FleetAuxillary::getDeckSpace()<<endl;
+	cout<<" Deck Space :"<< FleetAuxillary::getDeckSpace()<<"Square meters"<<endl;
 	
 
-	cout<<" Storage Capacity :"<< FleetAuxillary::getStorageCapacity()<<endl;
+	cout<<" Storage Capacity :"<< FleetAuxillary::getStorageCapacity()<<"Cubbic Meters"<<endl;
 }
 
 

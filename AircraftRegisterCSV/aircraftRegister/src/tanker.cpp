@@ -67,10 +67,10 @@ void Tanker::display()
 {
 	FleetAuxillary::display();
 
-	std::cout<<" Deck Space :" <<Tanker::getDeckSpace()<<std::endl;
+	std::cout<<" Deck Space :" <<Tanker::getDeckSpace()<<"Square Meters"<<std::endl;
 	
 
-	std::cout<<" Storage Capacity :" << Tanker::getStorageCapacity()<<std::endl;
+	std::cout<<" Storage Capacity :" << Tanker::getStorageCapacity()<<"L"<<std::endl;
 }
 
 void Tanker::save()

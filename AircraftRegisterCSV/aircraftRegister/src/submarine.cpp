@@ -105,9 +105,9 @@ return _displacementSubmerge;
 void Submarine::display()
 {
 Vessel::display();
-cout<<"maxDiveDepth : "<<getMaxDiveDepth()<<endl;
-cout<<"MaxspeedSubmerge : "<<getMaxSpeedSubmerge()<<endl;
-cout<<"DispSubmerge : "<<getDispSubmerge()<<endl;
+cout<<"maxDiveDepth : "<<getMaxDiveDepth()<<"meters"<<endl;
+cout<<"MaxspeedSubmerge : "<<getMaxSpeedSubmerge()<<"Knots"<<endl;
+cout<<"DispSubmerge : "<<getDispSubmerge()<<"tons"<<endl;
 
 
 }
