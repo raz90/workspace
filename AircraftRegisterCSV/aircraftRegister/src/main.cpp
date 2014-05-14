@@ -10,6 +10,9 @@ using namespace std;
 #include "../header/SSK.h"
 #include "../header/SSB.h"
 #include "../header/vessel.h"
+#define maxVessel 10000
+#define startVessel 0
+
 
 void menu();
 void addVessel(DataCon<Vessel>&vess);
@@ -32,7 +35,7 @@ int main(int argc, char **argv)
 
 	do
 	{
-		menu();
+		menu(); // call the main menu
 		cout<<"Option: ";
 		cin>>choice;
 		cout<<endl;
@@ -183,12 +186,12 @@ void deleteVessel(DataCon<Vessel> & vess)
 	{
 		cout<<"please enter the vessel signature : ";
 		cin>>pSignature;
-		if(cin.good())//to check if the input is interget or not
+		if(cin.good())//to check if the input is interger or not
 		{
-			if(pSignature>0&&pSignature<10000)// to check if the signature is within range
+			if(pSignature>startVessel&&pSignature<maxVessel)// to check if the signature is within range
 			{
 				vess.deleteVessel(pSignature);
-				check=true;
+				check=true;// to check if process was good
 			}
 			else
 			{
@@ -274,7 +277,7 @@ void SSKMenu(DataCon<Vessel> &vess)
 		cin>>pSignature;
 		if(cin.good())//to check if the input is interget or not
 		{
-			if(pSignature>0&&pSignature<10000)// to check if the signature is within range
+			if(pSignature>startVessel&&pSignature<maxVessel)// to check if the signature is within range
 			{
 				if (vess.checkSignature(pSignature)==true)
 				{
@@ -305,7 +308,7 @@ void SSKMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the vessel Length (In Metres) : ";
 		cin>>pLength;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -325,7 +328,7 @@ void SSKMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum range (In Nautical Miles) : ";
 		cin>>pMaxRange;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -346,7 +349,7 @@ void SSKMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum speed (in Knots) : ";
 		cin>>pMaxSpeed;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -366,7 +369,7 @@ void SSKMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum Displacement (in tones): ";
 		cin>>pMaxDisp;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -386,7 +389,7 @@ void SSKMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the crew number : ";
 		cin>>pCrew;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -406,7 +409,7 @@ void SSKMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the Maximum dive depth (in meters ): ";
 		cin>>pMaxDive;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -426,7 +429,7 @@ void SSKMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum speed submerge (in Knots): ";
 		cin>>pMaxSpeedSubmerge;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -446,7 +449,7 @@ void SSKMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the Displacement submerge (In tons): ";
 		cin>>pDispSubmerge;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -466,7 +469,7 @@ void SSKMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the no of torpedo : ";
 		cin>>pNoTorpedo;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -519,7 +522,7 @@ void SSBMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the vessel Name : ";
 		getline(cin,pVesselName);
-		for(unsigned int j=0;j<pVesselName.size();j++)
+		for(unsigned int j=0;j<pVesselName.size();j++)// this function to check if has space in input
 		{
 			if(pVesselName[j]==' ')
 			{
@@ -545,9 +548,9 @@ void SSBMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the vessel signature (Digits only): ";
 		cin>>pSignature;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
-			if(pSignature>0&&pSignature<10000)
+			if(pSignature>startVessel&&pSignature<maxVessel)//to check the range of input
 			{
 				if (vess.checkSignature(pSignature)==true)
 				{
@@ -578,7 +581,7 @@ void SSBMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the vessel Length (In Metres): ";
 		cin>>pLength;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -598,7 +601,7 @@ void SSBMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum range (In Nautical Miles): ";
 		cin>>pMaxRange;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -619,7 +622,7 @@ void SSBMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum speed (In Knots): ";
 		cin>>pMaxSpeed;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -639,7 +642,7 @@ void SSBMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum Displacement (in tons): ";
 		cin>>pMaxDisp;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -659,7 +662,7 @@ void SSBMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the crew number : ";
 		cin>>pCrew;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -682,7 +685,7 @@ void SSBMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the Maximum dive depth (In Metres): ";
 	    cin>>pMaxDive;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -706,7 +709,7 @@ void SSBMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum speed submerge (in knots): ";
 	    cin>>pMaxSpeedSubmerge;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -729,7 +732,7 @@ void SSBMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the Displacement submerge (in tons): ";
 	    cin>>pDispSubmerge;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -750,7 +753,7 @@ void SSBMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the no of SLBM : ";
 	    cin>>pSLBM;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -802,7 +805,7 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the vessel Name : ";
 		getline(cin,pVesselName);
-		for(unsigned int j=0;j<pVesselName.size();j++)
+		for(unsigned int j=0;j<pVesselName.size();j++)// this function to check it has space or not in input
 		{
 			if(pVesselName[j]==' ')
 			{
@@ -828,9 +831,9 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the vessel signature (Digits only): ";
 		cin>>pSignature;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
-			if(pSignature>0&&pSignature<10000)
+			if(pSignature > startVessel && pSignature < maxVessel)//to check range
 			{
 				if (vess.checkSignature(pSignature)==true)
 				{
@@ -861,7 +864,7 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the vessel Length (In Meters): ";
 		cin>>pLength;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -881,7 +884,7 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum range (in nautical miles): ";
 		cin>>pMaxRange;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -902,7 +905,7 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum speed (in knots): ";
 		cin>>pMaxSpeed;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -922,7 +925,7 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum Displacement (in tons): ";
 		cin>>pMaxDisp;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -942,7 +945,7 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the crew number : ";
 		cin>>pCrew;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -964,7 +967,7 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the No of Helicopter : ";
 	    cin>>pNoOfHelicopter;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -987,7 +990,7 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the Deck Space (In Square Meters): ";
 	    cin>>pDeckSpace;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1010,7 +1013,7 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 		cout<<"please enter the storage capacity (in Cubic Metres): ";
 		cin>>pStorageCapacity;
 
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1033,7 +1036,7 @@ void landingPlatMenu(DataCon<Vessel> &vess)
 		cout<<"please enter the no of Aircraft : ";
 	    cin>>pNoOfAircraft;
 
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1085,7 +1088,7 @@ void tankerMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the vessel Name : ";
 		getline(cin,pVesselName);
-		for(unsigned int j=0;j<pVesselName.size();j++)
+		for(unsigned int j=0;j<pVesselName.size();j++)//this function to check it has space or not
 		{
 			if(pVesselName[j]==' ')
 			{
@@ -1111,9 +1114,9 @@ void tankerMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the vessel signature (Digits only): ";
 		cin>>pSignature;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
-			if(pSignature>0&&pSignature<10000)
+			if(pSignature>startVessel&&pSignature<maxVessel)
 			{
 				if (vess.checkSignature(pSignature)==true)
 				{
@@ -1144,7 +1147,7 @@ void tankerMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the vessel Length (in meters): ";
 		cin>>pLength;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1164,7 +1167,7 @@ void tankerMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum range (in nautical miles): ";
 		cin>>pMaxRange;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1185,7 +1188,7 @@ void tankerMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum speed (in knots): ";
 		cin>>pMaxSpeed;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1205,7 +1208,7 @@ void tankerMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum Displacement (in tons): ";
 		cin>>pMaxDisp;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1225,7 +1228,7 @@ void tankerMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the crew number : ";
 		cin>>pCrew;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1246,7 +1249,7 @@ void tankerMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the No of Helicopter : ";
 	    cin>>pNoOfHelicopter;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1268,7 +1271,7 @@ void tankerMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the Deck Space (in square meters): ";
 	    cin>>pDeckSpace;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1289,7 +1292,7 @@ void tankerMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the storage capacity (in Cubic Metres): ";
 	    cin>>pStorageCapacity;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1341,7 +1344,7 @@ void aircraftCarMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the vessel Name : ";
 		getline(cin,pVesselName);
-		for(unsigned int j=0;j<pVesselName.size();j++)
+		for(unsigned int j=0;j<pVesselName.size();j++)//this function to check it has space or not
 		{
 			if(pVesselName[j]==' ')
 			{
@@ -1367,9 +1370,9 @@ void aircraftCarMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the vessel signature (Digits only): ";
 		cin>>pSignature;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
-			if(pSignature>0&&pSignature<10000)
+			if(pSignature > startVessel && pSignature < maxVessel)//range checking
 			{
 				if (vess.checkSignature(pSignature)==true)
 				{
@@ -1400,7 +1403,7 @@ void aircraftCarMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the vessel Length (in meters): ";
 		cin>>pLength;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1420,7 +1423,7 @@ void aircraftCarMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum range (in nautical miles): ";
 		cin>>pMaxRange;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1441,7 +1444,7 @@ void aircraftCarMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum speed (in knots): ";
 		cin>>pMaxSpeed;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1461,7 +1464,7 @@ void aircraftCarMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum Displacement (in tons): ";
 		cin>>pMaxDisp;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1481,7 +1484,7 @@ void aircraftCarMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the crew number : ";
 		cin>>pCrew;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1503,7 +1506,7 @@ void aircraftCarMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the No of Helicopter : ";
 		cin>>pNoOfHelicopter;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1525,7 +1528,7 @@ void aircraftCarMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the no Aircraft : ";
 	    cin>>pNoOfAircraft;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1572,7 +1575,7 @@ void destroyerMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the vessel Name : ";
 		getline(cin,pVesselName);
-		for(unsigned int j=0;j<pVesselName.size();j++)
+		for(unsigned int j=0;j<pVesselName.size();j++)//to check it has space or not
 		{
 			if(pVesselName[j]==' ')
 			{
@@ -1598,9 +1601,9 @@ void destroyerMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the vessel signature (Digits only): ";
 		cin>>pSignature;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
-			if(pSignature>0&&pSignature<10000)
+			if(pSignature > startVessel && pSignature < maxVessel)//range checking
 			{
 				if (vess.checkSignature(pSignature)==true)
 				{
@@ -1631,7 +1634,7 @@ void destroyerMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the vessel Length (in meters): ";
 		cin>>pLength;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1651,7 +1654,7 @@ void destroyerMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum range (in nautical miles): ";
 		cin>>pMaxRange;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1672,7 +1675,7 @@ void destroyerMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum speed (in tons): ";
 		cin>>pMaxSpeed;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1692,7 +1695,7 @@ void destroyerMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the maximum Displacement (in tons): ";
 		cin>>pMaxDisp;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1712,7 +1715,7 @@ void destroyerMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the crew number : ";
 		cin>>pCrew;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1734,7 +1737,7 @@ void destroyerMenu(DataCon<Vessel> &vess)
 	{
 		cout<<"please enter the No of Helicopter : ";
 	    cin>>pNoOfHelicopter;
-		if(cin.good())
+		if(cin.good())//to check if the input is interger or not
 		{
 		check=true;
 		}
@@ -1754,13 +1757,22 @@ void destroyerMenu(DataCon<Vessel> &vess)
 	check=false;
 	do
 	{
-		cout<<"please enter the Primary Weapon : ";
+		unsigned int maximumType=2;
+		cout<<"please enter the Primary Weapon : "<<endl;
 		cout<<"1.Gun Type"<<endl;
 		cout<<"2.Guided missile  Type"<<endl;
+		cout<<"input : ";
 		cin>>pPrimaryWeapon;
 		if(cin.good())
 		{
-		check=true;
+				if(pPrimaryWeapon<=maximumType)
+				{
+				check=true;
+				}
+				else
+				{
+				cout<<"invalid type"<<endl;
+				}
 		}
 		else
 		{

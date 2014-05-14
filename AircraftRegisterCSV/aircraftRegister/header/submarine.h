@@ -53,7 +53,7 @@ public :
     
 	virtual void display();
 
-	virtual void save();
+	virtual void save(std::string filename);
 	
 };
 

@@ -73,9 +73,9 @@ void SSK::display()
 
 }
 
-void SSK::save()
+void SSK::save(std::string filename)
 {
-	Submarine::save();
+	Submarine::save(filename);
 	std::ofstream file;
 	file.open("savefile.txt",std::ios::app);
 

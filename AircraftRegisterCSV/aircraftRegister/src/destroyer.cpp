@@ -63,18 +63,31 @@ unsigned int Destroyer::getPrimaryWeapon()
 
 void Destroyer::display()
 {
+	int gunType=1;
+	int guidedMissileType=2;
 	SurfaceVessel::display();
 
-	cout<<" Primary Weapon :"<< Destroyer::getPrimaryWeapon() <<endl;
-
+	if (getPrimaryWeapon()==gunType)
+	{
+	cout<<" Primary Weapon : Gun Type"<<endl;
+	}
+	else if (getPrimaryWeapon()==guidedMissileType)
+	{
+	cout<<" Primary Weapon : guided missile type"<<endl;
+	}
+	else
+	{
+	cout<<" invalid type"<<endl;
+	}
 }
 
-void Destroyer::save()
+void Destroyer::save(std::string filename)
 {
-	SurfaceVessel::save();
+	SurfaceVessel::save(filename);
 
 	std::ofstream file;
 	file.open("savefile.txt",std::ios::app);
+
 
 	file<<Destroyer::getPrimaryWeapon()<<"\n";
 					

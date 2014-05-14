@@ -213,45 +213,7 @@ catch (int err)
 	std::cout<<"error code "<<err<<" no data inside"<<std::endl;
 }
 
-//add Detroyer vessel function
-template <class anyType>
-void DataCon<anyType>::addDestroyer(std::string pVesselName,unsigned int pSignature,
-								    unsigned int pLength, unsigned int pMaxRange, 
-								    unsigned int pMaxSpeed, unsigned int pMaxDisp, 
-								    unsigned int pCrew,unsigned int pNoOfHelicopter,
-								    unsigned int pPrimaryWeapon)
-try
-{
-	_count++;
-	if(getCount()<maxVessel)//to check if reach maximum vessel
-	{
-	unsigned int pVessType=6;
-	std::cout<<"adding Destroyer"<<std::endl;
-	Destroyer *data=new Destroyer( pVesselName,pSignature,
-							       pLength, pMaxRange, 
-							       pMaxSpeed, pMaxDisp, 
-							       pCrew,pVessType,pNoOfHelicopter,
-								   pPrimaryWeapon);
-	
-	_dataList.addToList(data);
 
-	std::cout<<"input succesful"<<std::endl;
-	std::cout<<getCount()<<std::endl;
-	}
-	else
-	{
-	_count--;// to previous count
-	throw 0;
-	}
-}
-catch (int err)
-{
-	std::cout<<"error code "<<err<<" no data inside"<<std::endl;
-}
-catch (std::bad_alloc& ba)
-{
-    std::cerr << "bad_alloc caught: " << ba.what() << '\n';
-}
 
 //add Aircraft carrier function
 template <class anyType>
@@ -295,6 +257,46 @@ catch (std::bad_alloc& ba)
     std::cerr << "bad_alloc caught: " << ba.what() << '\n';
 }
 
+//add Detroyer vessel function
+template <class anyType>
+void DataCon<anyType>::addDestroyer(std::string pVesselName,unsigned int pSignature,
+								    unsigned int pLength, unsigned int pMaxRange, 
+								    unsigned int pMaxSpeed, unsigned int pMaxDisp, 
+								    unsigned int pCrew,unsigned int pNoOfHelicopter,
+								    unsigned int pPrimaryWeapon)
+try
+{
+	_count++;
+	if(getCount()<maxVessel)//to check if reach maximum vessel
+	{
+	unsigned int pVessType=6;
+	std::cout<<"adding Destroyer"<<std::endl;
+	Destroyer *data=new Destroyer( pVesselName,pSignature,
+							       pLength, pMaxRange, 
+							       pMaxSpeed, pMaxDisp, 
+							       pCrew,pVessType,pNoOfHelicopter,
+								   pPrimaryWeapon);
+	
+	_dataList.addToList(data);
+
+	std::cout<<"input succesful"<<std::endl;
+	std::cout<<getCount()<<std::endl;
+	}
+	else
+	{
+	_count--;// to previous count
+	throw 0;
+	}
+}
+catch (int err)
+{
+	std::cout<<"error code "<<err<<" no data inside"<<std::endl;
+}
+catch (std::bad_alloc& ba)
+{
+    std::cerr << "bad_alloc caught: " << ba.what() << '\n';
+}
+
 
 //browse function
 template <class anyType>
@@ -323,7 +325,7 @@ try
 					if (input=='n')// show the next vessel
 					{
 					browseCount++;
-							if (browseCount<=getCount())
+							if (browseCount<=getCount())//maximum page limiter
 							{
 							std::cout<<"Page : "<<browseCount<<std::endl;
 							current = current->getNextNode();//Get next node
@@ -339,7 +341,7 @@ try
 					else if (input=='p')// show the previous vessel
 					{
 					browseCount--;
-							if (browseCount>start)
+							if (browseCount>start)//minimum page limiter
 							{
 							std::cout<<browseCount<<std::endl;
 							current = current->getPrevNode();//get previous node
@@ -411,15 +413,15 @@ try
 		int choose;
 		do
 		{
-			cout<<"please choose to search by "<<endl;
+			cout<<"please choose to search by "<<endl;// to choose by what attribute to find
 			cout<<"1.Name"<<endl;
 			cout<<"2.Signature"<<endl;
 			cout<<"0.Exit"<<endl;
 			cin>>choose;
 
-				if (cin.good())
+				if (cin.good())//to check if it interger
 				{
-					if (choose==1)
+					if (choose==1)// search by name
 					{
 						cout<<"please enter name to search "<<endl;
 						cin>>name;
@@ -436,7 +438,7 @@ try
 						std::cout<<"data not found"<<std::endl;
 						}
 					}
-					else if(choose==2)
+					else if(choose==2)//search by signature
 					{
 						
 						cout<<"please enter Signature to search "<<endl;
@@ -484,21 +486,22 @@ try
 {
 		if (getCount()>0)// check if vessel data available
 		{
+				string filename="savefile.txt";
 				LnNode<anyType> *current = NULL;
 				current =_dataList.getBegin();	// Set current to head of list
 				anyType *data;
-
+				
 			
 
 				std::ofstream file;
-				file.open("savefile.txt",std::ios::trunc);
+				file.open(filename,std::ios::trunc);
 				file<<"";
 				file.close();
 	
 				while (current != NULL)
 				{
 					data = current->getData();
-					data->save();
+					data->save(filename);
 					current = current->getNextNode();		//Get next node
 				}
 		
@@ -536,7 +539,7 @@ try
 	bool checkVector=false;
 	std::ifstream myfile (filename.c_str());
 	
-	if(myfile.is_open())
+	if(myfile.is_open())//to check if file is open
 	{ 
 		while (!myfile.eof())
 		{
@@ -635,7 +638,7 @@ void DataCon<anyType>::loadSSB(std::string line)
 				line[i]=' ';
 				}
 				std::istringstream in(line);
-								
+				//insert input in string in sequence				
 				in>>pVessType>>pSignature>>pVesselName>>pLength
 				>>pMaxRange>>pMaxSpeed>>pMaxDisp>>pCrew>>pMaxDive
 				>>pMaxSpeedSubmerge>>pDispSubmerge>>pTotalSLBM;
@@ -689,7 +692,7 @@ void DataCon<anyType>::loadSSK(std::string line)
 				line[i]=' ';
 				}
 				std::istringstream in(line);
-								
+				//insert input in string in sequence						
 				in>>pVessType>>pSignature>>pVesselName>>pLength
 				>>pMaxRange>>pMaxSpeed>>pMaxDisp>>pCrew>>pMaxDive
 				>>pMaxSpeedSubmerge>>pDispSubmerge>>pTorpedo;
@@ -740,7 +743,7 @@ void DataCon<anyType>::loadTanker(std::string line)
 				line[i]=' ';
 				}
 				std::istringstream in(line);
-								
+				//insert input in string in sequence						
 				in>>pVessType>>pSignature>>pVesselName>>pLength
 				>>pMaxRange>>pMaxSpeed>>pMaxDisp>>pCrew>>pVessType>>pNoOfHelicopter
 				>>pDeckSpace>>pStorageCapacity;
@@ -789,7 +792,7 @@ void DataCon<anyType>::loadLanding(std::string line)
 				line[i]=' ';
 				}
 				std::istringstream in(line);
-								
+				//insert input in string in sequence						
 				in>>pVessType>>pSignature>>pVesselName>>pLength
 				>>pMaxRange>>pMaxSpeed>>pMaxDisp>>pCrew>>pNoOfHelicopter
 				>>pDeckSpace>>pStorageCapacity>>pNoOfAircraft;
@@ -840,7 +843,7 @@ void DataCon<anyType>::loadAirCarrier(std::string line)
 		line[i]=' ';
 		}
 		std::istringstream in(line);
-								
+		//insert input in string in sequence								
 		in>>pVessType>>pSignature>>pVesselName>>pLength
 		>>pMaxRange>>pMaxSpeed>>pMaxDisp>>pCrew>>pNoOfHelicopter
 		>>pNoOfAircraft;
@@ -887,7 +890,7 @@ void DataCon<anyType>::loadDestroyer(std::string line)
 		line[i]=' ';
 		}
 		std::istringstream in(line);
-								
+		//insert input in string in sequence								
 		in>>pVessType>>pSignature>>pVesselName>>pLength
 		>>pMaxRange>>pMaxSpeed>>pMaxDisp>>pCrew>>pNoOfHelicopter
 		>>pPrimaryWeapon;
@@ -977,19 +980,19 @@ catch(int err)
 }
 
 template <class anyType> 
-float DataCon<anyType>::compare(float pRandVes,float pVessel)
+float DataCon<anyType>::compare(float pRandVes,float pVessel)//perform calculation to check difference with to value
 {
 
 	
 	float diff;
 	float avg;
 	float result;
-	diff=pRandVes-pVessel;
-	avg	=(pRandVes+pVessel)/2;
+	diff=pRandVes-pVessel;//diff two value
+	avg	=(pRandVes+pVessel)/2;//average two value
 	
 	result=diff/avg;
 
-	result=result*100;
+	result=result*100; //result in percentage
 	
 	
 

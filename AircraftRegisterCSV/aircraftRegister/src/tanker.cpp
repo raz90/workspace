@@ -67,15 +67,15 @@ void Tanker::display()
 {
 	FleetAuxillary::display();
 
-	std::cout<<" Deck Space :" <<Tanker::getDeckSpace()<<"Square Meters"<<std::endl;
+	std::cout<<" Deck Space :" <<Tanker::getDeckSpace()<<"  Square Meters"<<std::endl;
 	
 
-	std::cout<<" Storage Capacity :" << Tanker::getStorageCapacity()<<"L"<<std::endl;
+	std::cout<<" Storage Capacity :" << Tanker::getStorageCapacity()<<"  Litres"<<std::endl;
 }
 
-void Tanker::save()
+void Tanker::save(std::string filename)
 {
-	FleetAuxillary::save();
+	FleetAuxillary::save(filename);
 
 
 	std::ofstream file;

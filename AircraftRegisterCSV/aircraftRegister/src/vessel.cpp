@@ -102,12 +102,42 @@ using namespace std;
 	{
 	cout<<"vessel name : "<<_name<<endl;
 	cout<<"signature id : "<<_signature<<endl;
-	cout<<"length : "<<_length<<"meters"<<endl;
-	cout<<"maximum speed : "<<_maxSpeed<<"Knots"<<endl;
-	cout<<"maximum Range : "<<_maxRange<<"nautical miles"<<endl;
-	cout<<"Displacement : "<<_maxDisp<<"tons"<<endl;
+	cout<<"length : "<<_length<<"  meters"<<endl;
+	cout<<"maximum speed : "<<_maxSpeed<<"  Knots"<<endl;
+	cout<<"maximum Range : "<<_maxRange<<"  nautical miles"<<endl;
+	cout<<"Displacement : "<<_maxDisp<<"  tons"<<endl;
 	cout<<"crew : "<<_crew<<endl;
-	cout<<"Vessel Type :"<<_vesselType<<endl;
+	if (_vesselType==1)
+	{
+	cout<<"Vessel Type : SSK"<<endl;
+	}
+	else if (_vesselType==2)
+	{
+	cout<<"Vessel Type : SSB"<<endl;
+	}
+	else if (_vesselType==3)
+	{
+	cout<<"Vessel Type : Tanker "<<endl;
+	}
+	else if (_vesselType==4)
+	{
+	cout<<"Vessel Type : Landing Platform Dock"<<endl;
+	}
+	else if (_vesselType==5)
+	{
+	cout<<"Vessel Type : Aircraft Carrier "<<endl;
+	}
+	else if (_vesselType==6)
+	{
+	cout<<"Vessel Type : Destroyer"<<endl;
+	}
+	else
+	{
+	cout<<"invalid type"<<endl;
+	}
+	
+	
+
 
 	
 	}
@@ -122,7 +152,7 @@ using namespace std;
 	
 	}
 
-	void Vessel::save()
+	void Vessel::save(std::string filename)
 	{
 	std::ofstream file;
 	file.open("savefile.txt",std::ios::app);

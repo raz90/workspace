@@ -105,16 +105,16 @@ return _displacementSubmerge;
 void Submarine::display()
 {
 Vessel::display();
-cout<<"maxDiveDepth : "<<getMaxDiveDepth()<<"meters"<<endl;
-cout<<"MaxspeedSubmerge : "<<getMaxSpeedSubmerge()<<"Knots"<<endl;
-cout<<"DispSubmerge : "<<getDispSubmerge()<<"tons"<<endl;
+cout<<"maxDiveDepth : "<<getMaxDiveDepth()<<"  meters"<<endl;
+cout<<"MaxspeedSubmerge : "<<getMaxSpeedSubmerge()<<"  Knots"<<endl;
+cout<<"DispSubmerge : "<<getDispSubmerge()<<"  tons"<<endl;
 
 
 }
 
-void Submarine::save()
+void Submarine::save(std::string filename)
 {
-	Vessel::save();
+	Vessel::save(filename);
 	std::ofstream file;
 	file.open("savefile.txt",std::ios::app);
 

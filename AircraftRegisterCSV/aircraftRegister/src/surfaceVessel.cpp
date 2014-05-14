@@ -90,9 +90,9 @@ void SurfaceVessel::display()
 
 }
 
-void SurfaceVessel::save()
+void SurfaceVessel::save(std::string filename)
 {
-	Vessel::save();
+	Vessel::save(filename);
 	std::ofstream file;
 	file.open("savefile.txt",std::ios::app);
 

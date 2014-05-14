@@ -47,7 +47,7 @@ FleetAuxillary(std::string pVesselName,
 
 	virtual void display();
 
-	virtual void save();
+	virtual void save(std::string filename);
 
 };
 

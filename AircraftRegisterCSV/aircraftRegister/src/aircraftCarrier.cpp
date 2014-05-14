@@ -69,9 +69,9 @@ void AircraftCarrier::display()
 	cout<< "Number of Aircraft" << AircraftCarrier::getNoOfAircraft() << endl;
 }
 
-void AircraftCarrier::save()
+void AircraftCarrier::save(std::string filename)
 {
-	SurfaceVessel::save();
+	SurfaceVessel::save(filename);
 
 	std::ofstream file;
 	file.open("savefile.txt",std::ios::app);

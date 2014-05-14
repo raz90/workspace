@@ -76,12 +76,12 @@ unsigned int SSB::getTotalSLBM()
 	 cout<< "Total SLBM :" << getTotalSLBM() << endl;
  }
 
- void SSB::save()
+ void SSB::save(std::string filename)
  {
  std::ofstream file;
 	
 	
-	Submarine::save();
+	Submarine::save(filename);
 	file.open("savefile.txt",std::ios::app);
 
 	file<<SSB::getTotalSLBM()<<"\n";	

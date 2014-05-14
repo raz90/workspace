@@ -74,9 +74,9 @@ void LandingPlatformDock::display()
 }
 
 
-void LandingPlatformDock::save()
+void LandingPlatformDock::save(std::string filename)
 {
-	FleetAuxillary::save();
+	FleetAuxillary::save(filename);
 	
 
 

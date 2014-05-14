@@ -100,16 +100,16 @@ void FleetAuxillary::display()
 {
 	SurfaceVessel::display();
 
-	cout<<" Deck Space :"<< FleetAuxillary::getDeckSpace()<<"Square meters"<<endl;
+	cout<<" Deck Space :"<< FleetAuxillary::getDeckSpace()<<"  Square meters"<<endl;
 	
 
-	cout<<" Storage Capacity :"<< FleetAuxillary::getStorageCapacity()<<"Cubbic Meters"<<endl;
+	cout<<" Storage Capacity :"<< FleetAuxillary::getStorageCapacity()<<"  Cubic Meters"<<endl;
 }
 
 
-void FleetAuxillary::save()
+void FleetAuxillary::save(std::string filename)
 {
-	SurfaceVessel::save();
+	SurfaceVessel::save(filename);
 
 	std::ofstream file;
 	file.open("savefile.txt",std::ios::app);
